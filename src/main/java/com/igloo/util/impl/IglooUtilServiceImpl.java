@@ -145,4 +145,8 @@ public class IglooUtilServiceImpl implements IglooUtilService {
 	public boolean removeUserPCInfo(UserInfo user) {
 		return cache.removeUserPCInfo(user);
 	}
+	
+	public boolean isBLUser(String value) {
+		return cache.isBLUser(value);
+	}
 }

@@ -37,30 +37,24 @@ public class UserLookupHandler implements LookupHandler {
 	}
 	
 	public Object lookup(String srcField, String dstField, Object value) {
-		if (dstField.equals("email")) {
-			if(value != null){
+		if(value != null){
+			if (dstField.toLowerCase().equals("email")) {
 				return cache.getEmail(value.toString());
 			}
-		}
-		if (dstField.equals("ip")) {
-			if(value != null){
+			else if (dstField.toLowerCase().equals("ip")) {
 				return cache.getIp(value.toString());
-			}
-			
-		}	
-		if (dstField.equals("id")) {
-			if(value != null){
+			}	
+			else if (dstField.toLowerCase().equals("id")) {
 				return cache.getId(value.toString());
 			}
-		}
-		if (dstField.equals("name")) {
-			if(value != null){
+			else if (dstField.toLowerCase().equals("name")) {
 				return cache.getName(value.toString());
 			}
-		}
-		if (dstField.equals("mac")) {
-			if(value != null){
+			else if (dstField.toLowerCase().equals("mac")) {
 				return cache.getMac(value.toString());
+			}
+			else if (dstField.toLowerCase().equals("isbl")) {
+				return cache.isBLUser(value.toString());
 			}
 		}
 		

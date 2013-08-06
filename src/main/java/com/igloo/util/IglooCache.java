@@ -149,6 +149,7 @@ public class IglooCache {
 			userKeys.put(user.getMac(), user_keys);
 			old_user.setMac(user.getMac());
 		}
+		old_user.setBlacklist(user.isBlacklist());
 		
 		userMap.get(hash_key).put(user_key, old_user);
 		return true;
@@ -216,6 +217,22 @@ public class IglooCache {
 			return true;
 		}
 		return false;
+	}
+	
+	public boolean isBLUser(String value) {
+		if(!isUser(value)){
+			return false;
+		}
+		
+		int user_key = userKeys.get(value).get(0);
+		int hash_key = user_key % USER_HASH;
+		
+		if(userMap.get(hash_key) == null){
+			return false;
+		}
+		else {
+			return userMap.get(hash_key).get(user_key).isBlacklist();
+		}
 	}
 	
 	public boolean isUser(String value){
@@ -657,6 +674,8 @@ public class IglooCache {
 			userinfo.setId(user.get("id"));
 			userinfo.setIp(user.get("ip"));
 			userinfo.setMac(user.get("mac"));
+			userinfo.setBlacklist(user.get("blacklist") != null && "true".equals(user.get("blacklist")));
+			
 			this.addUser(userinfo);
 		}
 		return true;

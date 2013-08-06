@@ -39,6 +39,8 @@ public interface IglooUtilService {
 	String userIp(String value);
 	String userId(String value);
 	String userMac(String value);
+	boolean isBLUser(String value);
+	
 	
 	List<UserInfo> listUser();
 	boolean syncUser(List<Map<String, String>> userList);

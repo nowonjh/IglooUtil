@@ -6,7 +6,7 @@ public class UserInfo {
 	private String id;
 	private String ip;
 	private String mac;
-	
+	private boolean blacklist;
 	
 	public String getMac() {
 		return mac;
@@ -38,8 +38,15 @@ public class UserInfo {
 	public void setIp(String ip) {
 		this.ip = ip;
 	}
+	public boolean isBlacklist() {
+		return blacklist;
+	}
+	public void setBlacklist(boolean blacklist) {
+		this.blacklist = blacklist;
+	}
+	
 	
 	public String toString(){
-		return "id=" + getId() + ", name=" + getName() + ", ip=" + getIp() + ", email=" + getEmail() + ", mac=" + getMac();
+		return "id=" + getId() + ", name=" + getName() + ", ip=" + getIp() + ", email=" + getEmail() + ", mac=" + getMac() + ", isBL=" + isBlacklist();
 	}
 }

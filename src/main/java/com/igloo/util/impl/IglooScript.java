@@ -70,68 +70,68 @@ public class IglooScript implements Script {
 		printList(util.listUrl(), args.length > 0 ? args[0] : null);
 	}
 
-	@ScriptUsage(description = "add blacklist ip.", arguments = { @ScriptArgument(name = "ip", type = "string", description = "add blacklist ip.")})
-	public void addIp(String[] args){
-		if(IglooCache.getInstance().isBlackListIP(args[0])){
-			context.println(args[0] + " is already added.");
-		} else {
-			boolean result = util.addIp(args[0]);
-			printAddResult(result, args[0]);
-		}
-	}
-	
-	@ScriptUsage(description = "add vulnerable port.", arguments = { @ScriptArgument(name = "port", type = "string", description = "add vulnerable port.")})
-	public void addPort(String[] args){
-		if(IglooCache.getInstance().isBlackListPort(args[0])){
-			context.println(args[0] + " is already added.");
-		} else {
-			boolean result = util.addPort(args[0]);
-			printAddResult(result, args[0]);
-		}
-	}
-	
-	@ScriptUsage(description = "add blacklist url.", arguments = { @ScriptArgument(name = "url", type = "string", description = "add blacklist url.")})
-	public void addUrl(String[] args){
-		if(IglooCache.getInstance().isBlackListUrl(args[0])){
-			context.println(args[0] + " is already added.");
-		} else {
-			boolean result = util.addUrl(args[0]);
-			printAddResult(result, args[0]);
-		}
-	}
-	
-	@ScriptUsage(description = "remove blacklist ip.", arguments = { @ScriptArgument(name = "ip", type = "string", description = "remove blacklist ip.")})
-	public void removeIp(String[] args){
-		if(IglooCache.getInstance().isBlackListIP(args[0])){
-			boolean result = util.removeIp(args[0]);
-			printRemoveResult(result, args[0]);
-		}
-		else {
-			context.println(args[0] + " is not exists.");
-		}
-	}
-	
-	@ScriptUsage(description = "remove vulnerable port.", arguments = { @ScriptArgument(name = "port", type = "string", description = "remove vulnerable port.")})
-	public void removePort(String[] args){
-		if(IglooCache.getInstance().isBlackListPort(args[0])){
-			boolean result = util.removePort(args[0]);
-			printRemoveResult(result, args[0]);
-		}
-		else {
-			context.println(args[0] + " is not exists.");
-		}
-	}
-	
-	@ScriptUsage(description = "remove blackList url.", arguments = { @ScriptArgument(name = "url", type = "string", description = "remove blackList url.")})
-	public void removeUrl(String[] args){
-		if(IglooCache.getInstance().isBlackListUrl(args[0])){
-			boolean result = util.removeUrl(args[0]);
-			printRemoveResult(result, args[0]);
-		}
-		else {
-			context.println(args[0] + " is not exists.");
-		}
-	}
+//	@ScriptUsage(description = "add blacklist ip.", arguments = { @ScriptArgument(name = "ip", type = "string", description = "add blacklist ip.")})
+//	public void addIp(String[] args){
+//		if(IglooCache.getInstance().isBlackListIP(args[0])){
+//			context.println(args[0] + " is already added.");
+//		} else {
+//			boolean result = util.addIp(args[0]);
+//			printAddResult(result, args[0]);
+//		}
+//	}
+//	
+//	@ScriptUsage(description = "add vulnerable port.", arguments = { @ScriptArgument(name = "port", type = "string", description = "add vulnerable port.")})
+//	public void addPort(String[] args){
+//		if(IglooCache.getInstance().isBlackListPort(args[0])){
+//			context.println(args[0] + " is already added.");
+//		} else {
+//			boolean result = util.addPort(args[0]);
+//			printAddResult(result, args[0]);
+//		}
+//	}
+//	
+//	@ScriptUsage(description = "add blacklist url.", arguments = { @ScriptArgument(name = "url", type = "string", description = "add blacklist url.")})
+//	public void addUrl(String[] args){
+//		if(IglooCache.getInstance().isBlackListUrl(args[0])){
+//			context.println(args[0] + " is already added.");
+//		} else {
+//			boolean result = util.addUrl(args[0]);
+//			printAddResult(result, args[0]);
+//		}
+//	}
+//	
+//	@ScriptUsage(description = "remove blacklist ip.", arguments = { @ScriptArgument(name = "ip", type = "string", description = "remove blacklist ip.")})
+//	public void removeIp(String[] args){
+//		if(IglooCache.getInstance().isBlackListIP(args[0])){
+//			boolean result = util.removeIp(args[0]);
+//			printRemoveResult(result, args[0]);
+//		}
+//		else {
+//			context.println(args[0] + " is not exists.");
+//		}
+//	}
+//	
+//	@ScriptUsage(description = "remove vulnerable port.", arguments = { @ScriptArgument(name = "port", type = "string", description = "remove vulnerable port.")})
+//	public void removePort(String[] args){
+//		if(IglooCache.getInstance().isBlackListPort(args[0])){
+//			boolean result = util.removePort(args[0]);
+//			printRemoveResult(result, args[0]);
+//		}
+//		else {
+//			context.println(args[0] + " is not exists.");
+//		}
+//	}
+//	
+//	@ScriptUsage(description = "remove blackList url.", arguments = { @ScriptArgument(name = "url", type = "string", description = "remove blackList url.")})
+//	public void removeUrl(String[] args){
+//		if(IglooCache.getInstance().isBlackListUrl(args[0])){
+//			boolean result = util.removeUrl(args[0]);
+//			printRemoveResult(result, args[0]);
+//		}
+//		else {
+//			context.println(args[0] + " is not exists.");
+//		}
+//	}
 	
 	
 	
@@ -148,16 +148,16 @@ public class IglooScript implements Script {
 		}
 	}
 	
-	@ScriptUsage(description = "remove user.", arguments = { @ScriptArgument(name = "userId", type = "string", description = "remove userInfo")})
-	public void removeUser(String[] args){
-		if(IglooCache.getInstance().isUser(args[0])){
-			boolean result = util.removeUrl(args[0]);
-			printRemoveResult(result, args[0]);
-		}
-		else {
-			context.println(args[0] + " is not exists.");
-		}
-	}
+//	@ScriptUsage(description = "remove user.", arguments = { @ScriptArgument(name = "userId", type = "string", description = "remove userInfo")})
+//	public void removeUser(String[] args){
+//		if(IglooCache.getInstance().isUser(args[0])){
+//			boolean result = util.removeUrl(args[0]);
+//			printRemoveResult(result, args[0]);
+//		}
+//		else {
+//			context.println(args[0] + " is not exists.");
+//		}
+//	}
 	
 	
 	@ScriptUsage(description = "user list.", arguments = { @ScriptArgument(name = "regex", type = "string", description = "regex match userInfo.",  optional = true)})
@@ -244,24 +244,24 @@ public class IglooScript implements Script {
 	
 	
 	
-	/* common function */
-	private void printAddResult(boolean result, String str) {
-		if(result){
-			context.println(str + " was added.");
-		}
-		else {
-			context.println(str + " failed to add.");
-		}
-	}
-	
-	private void printRemoveResult(boolean result, String str) {
-		if(result){
-			context.println(str + " was removed.");
-		}
-		else {
-			context.println(str + " failed to remove.");
-		}
-	}
+//	/* common function */
+//	private void printAddResult(boolean result, String str) {
+//		if(result){
+//			context.println(str + " was added.");
+//		}
+//		else {
+//			context.println(str + " failed to add.");
+//		}
+//	}
+//	
+//	private void printRemoveResult(boolean result, String str) {
+//		if(result){
+//			context.println(str + " was removed.");
+//		}
+//		else {
+//			context.println(str + " failed to remove.");
+//		}
+//	}
 	
 	private void printList(List<String> list, String regex) {
 		boolean match = false;

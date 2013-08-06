@@ -150,6 +150,8 @@ public class IglooUtilPlugin {
 		user.setId(user_map.get("id"));
 		user.setIp(user_map.get("ip"));
 		user.setMac(user_map.get("mac"));
+		user.setBlacklist(user_map.get("blacklist") != null && "true".equals(user_map.get("blacklist")));
+		
 		resp.put("result", util.updateUser(user));
 	}
 	
